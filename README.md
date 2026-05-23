@@ -79,3 +79,8 @@ Required (staging / production):
 
 - The site is intentionally marketing-only: service details and case studies are shared privately with prospects.
 - See `REQUIREMENTS.md` and the open issues for next tasks and the demo RAG plan.
+
+## Documentation
+
+- Canonical repo docs live in [docs/](docs/README.md).
+- Use the topic folders under `docs/` for brand, business, company, strategy, architecture, master, and roadmap material.

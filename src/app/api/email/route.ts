@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server"
 
+type ErrorWithMessage = {
+  message?: string
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json()
@@ -27,7 +31,8 @@ export async function POST(request: Request) {
 
     const data = await res.json()
     return NextResponse.json(data, { status: res.status })
-  } catch (err: any) {
-    return NextResponse.json({ error: err?.message || String(err) }, { status: 500 })
+  } catch (err: unknown) {
+    const error = err as ErrorWithMessage
+    return NextResponse.json({ error: error.message || String(err) }, { status: 500 })
   }
 }

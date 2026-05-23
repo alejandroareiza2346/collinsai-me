@@ -52,10 +52,6 @@ export default function GlassCard({ children, className, delay = 0 }: GlassCardP
         aria-hidden="true"
         className="glass-card-spotlight pointer-events-none absolute inset-0 opacity-[var(--spotlight-opacity)] transition-opacity duration-300"
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-70"
-      />
       <div className="relative">{children}</div>
     </motion.div>
   )

@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
+import { trackEvent } from "@/lib/analytics"
 
 export default function ContactForm() {
   const [email, setEmail] = useState("")
@@ -16,22 +17,16 @@ export default function ContactForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          to: "contact@collinsai.me",
-          subject: `Contacto web: ${email}`,
-          html: `<p>${message}</p><p>From: ${email}</p>`,
-        }),
+            to: "contact@collinsai.me",
+            subject: `Web contact: ${email}`,
+            html: `<p>${message}</p><p>From: ${email}</p>`,
+          }),
       })
 
       if (!res.ok) throw new Error("Email send failed")
 
-      // track event if posthog available
-      import("posthog-js").then((posthogModule) => {
-        const posthog = (posthogModule as any).default || posthogModule
-        const key = process.env.NEXT_PUBLIC_POSTHOG_KEY
-        if (key && (posthog as any).capture) {
-          posthog.capture("contact_form_submitted", { email })
-        }
-      })
+      // track submission (silent if analytics not configured)
+      trackEvent("contact_form_submitted", { email })
 
       setStatus("sent")
       setEmail("")
@@ -56,7 +51,7 @@ export default function ContactForm() {
       </label>
 
       <label className="block mt-4">
-        <span className="text-sm">Mensaje</span>
+        <span className="text-sm">Message</span>
         <textarea
           required
           value={message}
@@ -72,10 +67,10 @@ export default function ContactForm() {
           className="rounded-full bg-black px-6 py-2 text-white"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "Enviando…" : "Enviar"}
+          {status === "sending" ? "Sending…" : "Send"}
         </button>
-        {status === "sent" && <span className="ml-4 text-green-600">Enviado</span>}
-        {status === "error" && <span className="ml-4 text-red-600">Error al enviar</span>}
+        {status === "sent" && <span className="ml-4 text-green-600">Sent</span>}
+        {status === "error" && <span className="ml-4 text-red-600">Error sending</span>}
       </div>
     </form>
   )
