@@ -1,0 +1,81 @@
+{
+  "name": "Order Processing (CollinsAI)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "order-webhook",
+        "responseMode": "onReceived"
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 200]
+    },
+    {
+      "parameters": {
+        "functionCode": "// transform order payload\nreturn items;"
+      },
+      "name": "Transform",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [450, 200]
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "https://api.collinsai.me/tasks/run",
+        "bodyParametersJson": "={ \"task_type\": \"order_sync\", \"payload\": $json }"
+      },
+      "name": "Trigger Task",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [700, 200]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO tasks (type, payload, status, created_at) VALUES ('order_sync', $1, 'scheduled', now())"
+      },
+      "name": "Log Task",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [950, 200]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Transform",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transform": {
+      "main": [
+        [
+          {
+            "node": "Trigger Task",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trigger Task": {
+      "main": [
+        [
+          {
+            "node": "Log Task",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
