@@ -84,6 +84,8 @@ const fundabilitySignals = [
     title: "Compounding efficiency",
     description: "Automations, integrations, and operational data improve the system over time.",
   },
+]
+
 export default function FeaturesPage() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-[var(--background)] text-white">
@@ -144,11 +146,11 @@ export default function FeaturesPage() {
                   Product language
                 </p>
                 <h3 className="mt-3 text-3xl font-semibold tracking-tight text-white/92 sm:text-4xl">
-                  Glass surfaces that feel alive, not static.
+                  Service pages should explain value fast, not make people decode jargon.
                 </h3>
                 <p className="mt-4 text-sm leading-6 text-white/65 sm:text-base">
-                  The service should feel like a practical wedge into real operational pain,
-                  with enough clarity and speed to help SMBs adopt it quickly.
+                  CollinsAI needs a page that shows the outcome, the delivery model, and the
+                  operational pain it removes in one pass.
                 </p>
               </div>
 
@@ -182,11 +184,11 @@ export default function FeaturesPage() {
               </div>
               <div className="mt-10 flex items-center gap-3 text-sm text-white/68">
                 <Bot className="h-4 w-4 text-[var(--primary)]" />
-                <span>Problem-first delivery narrative</span>
+                  <span>Problem-first service narrative</span>
               </div>
               <div className="mt-4 flex items-center gap-3 text-sm text-white/68">
                 <Sparkles className="h-4 w-4 text-[var(--primary)]" />
-                <span>Repeatable implementation and retention loops</span>
+                  <span>Repeatable implementation and clearer retention loops</span>
               </div>
             </div>
           </GlassCard>

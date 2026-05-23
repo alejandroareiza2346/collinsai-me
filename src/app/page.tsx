@@ -3,8 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { useState } from "react"
-import { ArrowRight, Layers3, Menu, X } from "lucide-react"
+import { ArrowRight, CheckCircle2, Clock3, Layers3, Radar, ShieldCheck, Workflow } from "lucide-react"
 
 import GlassCard from "@/components/GlassCard"
 import PerformanceWidget from "@/components/PerformanceWidget"
@@ -12,8 +11,6 @@ import Header from "@/components/Header"
 import { trackEvent } from "@/lib/analytics"
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
   return (
     <div className="relative min-h-screen overflow-hidden bg-[var(--background)] text-white">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -105,6 +102,119 @@ export default function Home() {
 
         <section className="mt-8">
           <PerformanceWidget />
+        </section>
+
+        <section className="mt-8 grid gap-4 lg:grid-cols-12">
+          <GlassCard className="relative overflow-hidden p-6 lg:col-span-7 lg:p-8">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(47,136,255,0.12),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.05),transparent_26%)]" />
+            <div className="relative flex h-full flex-col justify-between gap-8">
+              <div>
+                <p className="text-xs uppercase tracking-[0.28em] text-white/45">What we automate</p>
+                <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-white/92 sm:text-4xl">
+                  Operational work becomes a system, not a pile of manual follow-ups.
+                </h2>
+                <p className="mt-4 max-w-2xl text-sm leading-6 text-white/65 sm:text-base">
+                  CollinsAI is built for SMBs that need a clear way to remove repetition,
+                  improve response time, and keep every key process visible.
+                </p>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                {[
+                  [Workflow, "Process automation", "Replace repetitive tasks with dependable workflows."],
+                  [Radar, "Operational dashboards", "See pipeline, activity, and bottlenecks in one view."],
+                  [ShieldCheck, "Secure integrations", "Connect tools without losing governance or control."],
+                  [Clock3, "Fast delivery", "Start with a diagnostic, ship an MVP, then iterate."],
+                ].map(([Icon, title, description]) => (
+                  <div
+                    key={title}
+                    className="rounded-[calc(var(--radius)*1.4)] border border-white/10 bg-white/[0.04] p-4"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/6 text-[var(--primary)]">
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold tracking-tight text-white/92">{title}</p>
+                        <p className="mt-1 text-sm leading-6 text-white/62">{description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </GlassCard>
+
+          <div className="grid gap-4 lg:col-span-5">
+            <GlassCard className="relative overflow-hidden p-6 lg:p-8">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(83,214,255,0.14),transparent_34%)]" />
+              <div className="relative">
+                <p className="text-xs uppercase tracking-[0.28em] text-white/45">How we deliver</p>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white/92">
+                  Simple path, measurable output, no mystery.
+                </h2>
+                <div className="mt-5 space-y-3">
+                  {[
+                    "Operational diagnostic to isolate what wastes time.",
+                    "MVP automation in 2-6 weeks for one high-value workflow.",
+                    "Iteration with metrics, alerts, and a clear owner for each step.",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-3">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[var(--primary)]" />
+                      <p className="text-sm leading-6 text-white/68">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </GlassCard>
+
+            <GlassCard className="relative overflow-hidden p-6 lg:p-8">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(47,136,255,0.1),transparent_36%)]" />
+              <div className="relative">
+                <p className="text-xs uppercase tracking-[0.28em] text-white/45">Client outcome</p>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white/92">
+                  Less manual work, better follow-up, stronger control.
+                </h2>
+                <p className="mt-4 text-sm leading-6 text-white/65">
+                  The value is not the AI itself. The value is that the operation becomes easier
+                  to run, easier to monitor, and easier to scale.
+                </p>
+              </div>
+            </GlassCard>
+          </div>
+
+          <GlassCard className="relative overflow-hidden p-6 lg:col-span-12 lg:p-8">
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(47,136,255,0.16),rgba(255,255,255,0.03),rgba(255,255,255,0.02))]" />
+            <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-3xl">
+                <p className="text-xs uppercase tracking-[0.28em] text-white/45">Next step</p>
+                <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white/92 sm:text-4xl">
+                  Book a 30-minute operational diagnostic and we will map the first workflow.
+                </h2>
+                <p className="mt-4 max-w-2xl text-sm leading-6 text-white/68 sm:text-base">
+                  We will identify one process to automate first, the data it needs, and the
+                  delivery shape that makes the fastest sense for your team.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/contact"
+                  onClick={() => trackEvent("cta_contact_click", { location: "footer" })}
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-[var(--primary)] px-7 py-3 text-sm font-semibold text-white shadow-[0_14px_40px_rgba(59,127,255,0.24)] transition-transform duration-300 hover:-translate-y-0.5"
+                >
+                  <span>Book a diagnostic</span>
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                </Link>
+                <Link
+                  href="/pricing"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/4 px-7 py-3 text-sm font-medium text-white/82 backdrop-blur-sm transition hover:border-white/18 hover:bg-white/6"
+                >
+                  View engagement model
+                </Link>
+              </div>
+            </div>
+          </GlassCard>
         </section>
       </main>
     </div>
