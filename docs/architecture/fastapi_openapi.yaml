@@ -1,0 +1,92 @@
+openapi: 3.0.3
+info:
+  title: CollinsAI FastAPI - Public API
+  version: 1.0.0
+  description: OpenAPI spec for core ingestion endpoints used by the Next.js frontend and automation workflows.
+servers:
+  - url: https://api.collinsai.me
+paths:
+  /ingest/contact:
+    post:
+      summary: Ingest contact from web/contact form
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contact'
+            example:
+              name: "María Pérez"
+              email: "maria@cliente.com"
+              phone: "+573001112233"
+              source: "web:landing"
+              payload:
+                message: "Necesito automatizar mis pedidos"
+      responses:
+        '200':
+          description: Contact accepted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+  /tasks/run:
+    post:
+      summary: Schedule or trigger an operational task
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskTrigger'
+            example:
+              task_type: "order_sync"
+              payload:
+                order_id: 12345
+      responses:
+        '200':
+          description: Task scheduled
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: scheduled
+components:
+  schemas:
+    Contact:
+      type: object
+      required: [name, email]
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+        source:
+          type: string
+          description: Source identifier (e.g. web:landing, whatsapp:flow)
+        payload:
+          type: object
+          description: Free-form payload with extra fields
+    TaskTrigger:
+      type: object
+      required: [task_type]
+      properties:
+        task_type:
+          type: string
+          description: Short task identifier
+        run_at:
+          type: string
+          format: date-time
+          description: Optional scheduled time
+        payload:
+          type: object
+          description: Arbitrary task payload
