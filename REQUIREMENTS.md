@@ -8,15 +8,13 @@ Sitio marketing y captura de leads para CollinsAI, mostrando servicios, casos, e
 
 ## Estructura mínima de páginas
 
-- Home (hero, propuesta de valor, CTA, servicios destacados)
-- Servicios (páginas por servicio: Agentes IA, Automatización, RAG, Analítica)
-- Casos de éxito (2–5 estudios de caso con resultados/ROI)
-- Sobre nosotros (equipo, fundador, ubicación)
-- Demo / Producto (sandbox RAG o chatbot demostrativo)
-- Contacto (formulario, email, calendario opcional)
-- Blog / Recursos (opcional)
-- Portal de clientes (opcional, fase posterior)
-- Legal: privacidad, términos, cookies
+- Home (hero, propuesta de valor y CTA principal).
+- Sobre nosotros (equipo, fundador, ubicación, propuesta de valor).
+- Contacto (formulario, email, instrucciones para solicitar servicios — los detalles de servicio se gestionan fuera del sitio).
+- Demo / Producto (opcional, sandbox RAG o chatbot demostrativo — opcional según roadmap).
+- Legal: Política de privacidad, Términos y cookies.
+
+Nota: esta página es la web corporativa/marketing de CollinsAI. Los detalles operativos y documentación completa de los servicios no estarán publicadas aquí; se gestionan directamente con clientes (propuestas, entregables y demos privadas).
 
 ## Funcionalidades (MVP)
 

@@ -24,31 +24,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="services" className="mt-16">
-          <h2 className="text-2xl font-semibold">Servicios</h2>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2">
-            <div className="p-6 border rounded-lg">
-              <h3 className="font-semibold">Agentes IA & Chatbots</h3>
-              <p className="mt-2 text-sm text-zinc-600">Agentes autónomos integrados con tus sistemas para ventas, soporte y operaciones.</p>
-            </div>
-            <div className="p-6 border rounded-lg">
-              <h3 className="font-semibold">Automatización de procesos</h3>
-              <p className="mt-2 text-sm text-zinc-600">Automatizamos workflows críticos para reducir costos y acelerar ingresos.</p>
-            </div>
-            <div className="p-6 border rounded-lg">
-              <h3 className="font-semibold">RAG & Knowledge Systems</h3>
-              <p className="mt-2 text-sm text-zinc-600">Sistemas de búsqueda semántica y asistentes con contexto empresarial.</p>
-            </div>
-            <div className="p-6 border rounded-lg">
-              <h3 className="font-semibold">Analítica y recomendaciones</h3>
-              <p className="mt-2 text-sm text-zinc-600">Dashboards y recomendaciones accionables para decisiones rápidas.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="cases" className="mt-16">
-          <h2 className="text-2xl font-semibold">Casos de éxito</h2>
-          <p className="mt-4 text-sm text-zinc-600">Próximamente: estudios de caso que muestran ROI real para clientes PYMEs.</p>
+        <section id="about" className="mt-16">
+          <h2 className="text-2xl font-semibold">Sobre CollinsAI</h2>
+          <p className="mt-4 text-sm text-zinc-600">Somos un equipo técnico que desarrolla agentes IA y soluciones a medida para PYMEs. Si quieres conocer nuestros servicios y casos, contáctanos y te compartiremos la información y demos privadas.</p>
         </section>
 
         <section id="contact" className="mt-16">
