@@ -1,5 +1,6 @@
 ﻿"use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import {
@@ -91,8 +92,15 @@ export default function Home() {
       <header className="fixed left-1/2 top-6 z-50 w-[min(92vw,54rem)] -translate-x-1/2">
         <GlassCard className="flex items-center justify-between gap-4 px-4 py-3 sm:px-5">
           <Link href="#top" className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[linear-gradient(145deg,rgba(47,136,255,0.25),rgba(255,255,255,0.06))] text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.24)]">
-              C
+            <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/6 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]">
+              <Image
+                src="/images/logos/CollinsAI.png"
+                alt="CollinsAI logo"
+                width={40}
+                height={40}
+                className="h-full w-full object-contain p-1.5"
+                priority
+              />
             </span>
             <div>
               <p className="text-sm font-semibold tracking-[0.22em] text-white/90 uppercase">
