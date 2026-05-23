@@ -1,4 +1,7 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const ContactForm = dynamic(() => import("@/components/ContactForm"), { ssr: false })
 
 export default function Home() {
   return (
@@ -31,8 +34,10 @@ export default function Home() {
 
         <section id="contact" className="mt-16">
           <h2 className="text-2xl font-semibold">Contacto</h2>
-          <p className="mt-2 text-sm text-zinc-600">Email: <a href="mailto:owner@collinsai.me" className="underline">owner@collinsai.me</a></p>
-          <p className="mt-2 text-sm text-zinc-600">También puedes agendar una demo respondiendo a ese correo.</p>
+          <p className="mt-2 text-sm text-zinc-600">Envíanos un mensaje y te contactamos para coordinar demo y propuesta.</p>
+          <div className="mt-4">
+            <ContactForm />
+          </div>
         </section>
       </main>
 
