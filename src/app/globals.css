@@ -49,6 +49,7 @@
 }
 
 :root {
+  --font-sans: "Baskerville Display PT", Baskerville, "Times New Roman", serif;
   --background: #000510;
   --foreground: #f6f9ff;
   --card: #07111f;
@@ -144,10 +145,12 @@
 
   html {
     @apply font-sans scroll-smooth;
+    font-family: var(--font-sans);
   }
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
     background-image:
       radial-gradient(circle at 20% 10%, rgba(47, 136, 255, 0.18), transparent 26%),
       radial-gradient(circle at 80% 0%, rgba(83, 214, 255, 0.12), transparent 24%),
