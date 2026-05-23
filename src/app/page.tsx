@@ -94,7 +94,7 @@ export default function Home() {
           <Link href="#top" className="flex items-center gap-3">
             <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/6 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]">
               <Image
-                src="/images/logos/CollinsAI.png"
+                src="/images/logos/CollinsAI%20(7).png"
                 alt="CollinsAI logo"
                 width={40}
                 height={40}
@@ -106,7 +106,6 @@ export default function Home() {
               <p className="text-sm font-semibold tracking-[0.22em] text-white/90 uppercase">
                 CollinsAI
               </p>
-              <p className="text-[11px] text-white/55">Deep Ocean Glass</p>
             </div>
           </Link>
 
@@ -125,7 +124,7 @@ export default function Home() {
         <section className="flex min-h-[calc(100vh-9rem)] flex-col items-center justify-center text-center">
           <GlassCard className="mx-auto flex w-fit items-center gap-2 px-4 py-2 text-xs uppercase tracking-[0.26em] text-white/70">
             <Layers3 className="h-3.5 w-3.5 text-[var(--primary)]" />
-            Deep Ocean Glass for CollinsAI
+            CollinsAI
           </GlassCard>
 
           <motion.h1
@@ -134,7 +133,7 @@ export default function Home() {
             transition={{ duration: 0.85, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
             className="mt-8 max-w-5xl text-balance text-5xl font-semibold tracking-tight text-white/90 sm:text-6xl lg:text-7xl xl:text-8xl"
           >
-            You can connect like ocean
+            CollinsAI
           </motion.h1>
 
           <motion.p
@@ -218,8 +217,8 @@ export default function Home() {
                   Glass surfaces that feel alive, not static.
                 </h3>
                 <p className="mt-4 text-sm leading-6 text-white/65 sm:text-base">
-                  The interface should feel like a premium device: quiet, deep,
-                  reactive and ready for demos that convert.
+                  The interface should feel quiet, premium and responsive,
+                  with enough contrast and structure to support demos that convert.
                 </p>
               </div>
 
@@ -275,7 +274,7 @@ export default function Home() {
                 </h3>
                 <p className="mt-4 max-w-xl text-sm leading-6 text-white/65 sm:text-base">
                   Share the brief and we will respond with a private proposal.
-                  The form below stays as the closing conversion point on the page.
+                  The form below remains the closing conversion point on the page.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3 text-sm text-white/60">
                   {[
