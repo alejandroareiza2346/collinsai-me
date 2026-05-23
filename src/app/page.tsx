@@ -121,115 +121,89 @@ export default function Home() {
       </header>
 
       <main id="top" className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-32 lg:px-8">
-        <section className="grid min-h-[calc(100vh-9rem)] items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <GlassCard className="mx-auto flex w-fit items-center gap-2 px-4 py-2 text-xs uppercase tracking-[0.26em] text-white/70 lg:mx-0">
-              <Layers3 className="h-3.5 w-3.5 text-[var(--primary)]" />
-              CollinsAI
-            </GlassCard>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.85, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-8 max-w-4xl text-balance text-5xl font-semibold tracking-tight text-white/90 sm:text-6xl lg:text-7xl xl:text-8xl"
-            >
-              CollinsAI
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.85, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-7 max-w-2xl text-pretty text-base leading-7 text-white/62 sm:text-lg"
-            >
-              Premium AI agent systems for companies that need fast execution,
-              elegant product surfaces and measurable ROI.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.85, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-10 flex flex-col items-center gap-4 sm:flex-row lg:items-start"
-            >
-              <a
-                href="#contact"
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-[var(--primary)] px-7 py-3 text-sm font-semibold text-white shadow-[0_18px_60px_rgba(47,136,255,0.35)] transition-transform duration-300 hover:-translate-y-0.5"
-              >
-                <span className="absolute inset-x-2 top-0 h-px rounded-full bg-white/80 blur-[1px]" />
-                <span className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-transparent opacity-75" />
-                <span className="relative">Ver demo</span>
-                <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-              </a>
-
-              <a
-                href="#features"
-                className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/4 px-7 py-3 text-sm font-medium text-white/80 backdrop-blur-sm transition hover:border-white/20 hover:bg-white/6"
-              >
-                Explorar sistema
-              </a>
-            </motion.div>
-          </div>
-
-          <div className="relative mx-auto w-full max-w-3xl">
-            <div className="pointer-events-none absolute -left-10 top-16 hidden h-44 w-44 rounded-full bg-[radial-gradient(circle,rgba(47,136,255,0.2)_0%,transparent_70%)] blur-3xl lg:block" />
-            <div className="grid gap-4 sm:grid-cols-12">
-              <GlassCard className="relative overflow-hidden p-3 sm:col-span-7 sm:row-span-2">
-                <div className="relative min-h-[23rem] overflow-hidden rounded-[calc(var(--radius)*2.2)] border border-white/10">
-                  <Image
-                    src="/images/backgrounds/fondo.png"
-                    alt="Ocean background"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 42vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,5,16,0.8),rgba(0,5,16,0.05)_45%,rgba(0,5,16,0.2))]" />
-                  <div className="absolute inset-x-0 bottom-0 p-5">
-                    <p className="text-xs uppercase tracking-[0.28em] text-white/55">
-                      Surface
-                    </p>
-                    <p className="mt-2 max-w-xs text-sm leading-6 text-white/80">
-                      A clean visual anchor built from the ocean imagery assets
-                      already in the brand folder.
-                    </p>
-                  </div>
-                </div>
-              </GlassCard>
-
-              <GlassCard className="relative overflow-hidden p-3 sm:col-span-5 sm:mt-16">
-                <div className="relative min-h-[18rem] overflow-hidden rounded-[calc(var(--radius)*2.2)] border border-white/10">
-                  <Image
-                    src="/images/backgrounds/You%20can%20connect%20like%20ocean.png"
-                    alt="CollinsAI visual composition"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 30vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,5,16,0.66),rgba(0,5,16,0.08)_40%,rgba(0,5,16,0.22))]" />
-                </div>
-              </GlassCard>
-
-              <GlassCard className="relative overflow-hidden p-5 sm:col-span-6 lg:ml-14">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(47,136,255,0.14),transparent_42%)]" />
-                <div className="relative flex min-h-[13rem] flex-col justify-between">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.28em] text-white/45">
-                      System state
-                    </p>
-                    <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white/92">
-                      Clean brand, sharp content, better hierarchy.
-                    </h2>
-                  </div>
-                  <p className="max-w-sm text-sm leading-6 text-white/65">
-                    The page now uses the background assets directly and keeps
-                    the composition more readable on desktop and mobile.
-                  </p>
-                </div>
-              </GlassCard>
+        <section className="relative min-h-[calc(100vh-9rem)] overflow-hidden">
+          <GlassCard className="relative h-full min-h-[calc(100vh-9rem)] overflow-hidden p-0">
+            <div className="absolute inset-0">
+              <Image
+                src="/images/backgrounds/fondo.png"
+                alt="Ocean background"
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover object-center scale-105"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,5,16,0.92)_0%,rgba(0,5,16,0.72)_34%,rgba(0,5,16,0.34)_58%,rgba(0,5,16,0.14)_72%,rgba(0,5,16,0.86)_100%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(255,255,255,0.12),transparent_28%),radial-gradient(circle_at_18%_50%,rgba(47,136,255,0.16),transparent_34%),radial-gradient(circle_at_82%_50%,rgba(255,255,255,0.04),transparent_30%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,5,16,0.18),rgba(0,5,16,0.42)_40%,rgba(0,5,16,0.92))]" />
             </div>
-          </div>
+
+            <div className="relative grid min-h-[calc(100vh-9rem)] items-center gap-10 px-6 py-8 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:px-12 lg:py-12">
+              <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+                <GlassCard className="mx-auto flex w-fit items-center gap-2 px-4 py-2 text-xs uppercase tracking-[0.26em] text-white/70 lg:mx-0">
+                  <Layers3 className="h-3.5 w-3.5 text-[var(--primary)]" />
+                  CollinsAI
+                </GlassCard>
+
+                <motion.h1
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.85, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-8 max-w-4xl text-balance text-5xl font-semibold tracking-tight text-white/92 sm:text-6xl lg:text-7xl xl:text-8xl"
+                >
+                  CollinsAI
+                </motion.h1>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.85, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-7 max-w-2xl text-pretty text-base leading-7 text-white/70 sm:text-lg"
+                >
+                  Premium AI agent systems for companies that need fast execution,
+                  elegant product surfaces and measurable ROI.
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.85, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-10 flex flex-col items-center gap-4 sm:flex-row lg:items-start"
+                >
+                  <a
+                    href="#contact"
+                    className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-[var(--primary)] px-7 py-3 text-sm font-semibold text-white shadow-[0_18px_60px_rgba(47,136,255,0.35)] transition-transform duration-300 hover:-translate-y-0.5"
+                  >
+                    <span className="absolute inset-x-2 top-0 h-px rounded-full bg-white/80 blur-[1px]" />
+                    <span className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-transparent opacity-75" />
+                    <span className="relative">Ver demo</span>
+                    <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                  </a>
+
+                  <a
+                    href="#features"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/4 px-7 py-3 text-sm font-medium text-white/82 backdrop-blur-sm transition hover:border-white/20 hover:bg-white/6"
+                  >
+                    Explorar sistema
+                  </a>
+                </motion.div>
+              </div>
+
+              <div className="hidden lg:block" aria-hidden="true">
+                <div className="relative ml-auto w-full max-w-2xl rounded-[2rem] border border-white/8 bg-white/4 p-4 shadow-[0_24px_90px_rgba(0,0,0,0.35)] backdrop-blur-sm">
+                  <div className="relative aspect-[1.15/1] overflow-hidden rounded-[1.6rem] border border-white/10">
+                    <Image
+                      src="/images/backgrounds/You%20can%20connect%20like%20ocean.png"
+                      alt="CollinsAI visual composition"
+                      fill
+                      sizes="(max-width: 1024px) 0vw, 42vw"
+                      className="object-cover object-center opacity-90 blur-[0.2px] scale-105"
+                    />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_28%,rgba(255,255,255,0.08),transparent_26%),linear-gradient(to_top,rgba(0,5,16,0.78),rgba(0,5,16,0.06)_50%,rgba(0,5,16,0.24))]" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </GlassCard>
         </section>
 
         <section id="features" className="mt-8 grid gap-4 lg:grid-cols-12 lg:auto-rows-[minmax(10rem,auto)]">
