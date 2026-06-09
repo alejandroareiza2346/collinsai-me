@@ -102,7 +102,7 @@ npm run build && npm start
 Project designed and developed by **Alejandro Areiza Alzate**, founder of CollinsAI, Computer Engineering student at Universidad Autónoma Latinoamericana (UNAULA), Medellín, and GitHub Developer Program member.
 
 - **Company:** [collinsai.me](https://collinsai-me.vercel.app) — AI automation solutions for SMEs
-- **LinkedIn:** [linkedin.com/in/alejandro-areiza-alzate-8a73a53b4](https://www.linkedin.com/in/alejandro-areiza-alzate-8a73a53b4)
+- **LinkedIn:** [www.linkedin.com/in/alejandroareizaa](www.linkedin.com/in/alejandroareizaa)
 - **Research (ORCID):** [0009-0002-2116-6918](https://orcid.org/0009-0002-2116-6918)
 - **Certifications:** Microsoft Learn Level 6 — 26,950 XP (Azure Identity, Network Security & SQL Security); Cisco; Google; IBM; OWASP Top 10
 
